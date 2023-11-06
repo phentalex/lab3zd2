@@ -47,10 +47,9 @@ namespace WindowsFormsApp5
                 for (int j = 0; j < 1; j++)
                 {
                     if (Double.Parse(x[i]) >= 0 && Math.Pow(Double.Parse(x[i]), 2) + Math.Pow(Double.Parse(y[i]), 2) <= Math.Pow(r, 2) ||
-                        Double.Parse(x[i]) <= 0 && r >= Double.Parse(y[i]) && Double.Parse(y[i]) >= Double.Parse(x[i]) && -r <= Double.Parse(y[i]) && Double.Parse(y[i]) <= Double.Parse(x[i]))
+                        Double.Parse(x[i]) <= 0 && Math.Abs(Double.Parse(x[i])) <= r && Double.Parse(y[i]) >= -r && Double.Parse(y[i]) <= r && Double.Parse(y[i]) <= Double.Parse(x[i]) || Double.Parse(y[i]) >= -Double.Parse(x[i]))
                     {
                         shootings.Add(new shooting(Convert.ToString(i + 1), "Попал"));
-                        //dataGridView1.Rows[i].Cells[j].Style.BackColor = Color.FromArgb(38, 173, 74);
                     }
                     else
                     {
